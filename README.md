@@ -5,7 +5,7 @@
 🔴 **[Read the full report →](
 https://silvermanjonathan.github.io/USAIsraelWinsInIran/)**
 
-*(Replace the URL above with your actual GitHub Pages link after deployment.)*
+
 
 ---
 
