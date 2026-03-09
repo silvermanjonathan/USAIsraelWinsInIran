@@ -2,7 +2,8 @@
 
 **A comprehensive strategic assessment — March 9, 2026 · Day 10 of Operation Epic Fury**
 
-🔴 **[Read the full report →](https://YOUR-USERNAME.github.io/irgc-cannot-win/)**
+🔴 **[Read the full report →](
+https://silvermanjonathan.github.io/USAIsraelWinsInIran/)**
 
 *(Replace the URL above with your actual GitHub Pages link after deployment.)*
 
