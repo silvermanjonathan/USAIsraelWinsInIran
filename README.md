@@ -83,4 +83,4 @@ This report is released for public use. Attribution appreciated but not required
 
 ---
 
-*Compiled by Jonathan · Hexagonal Sentinel, Inc.*
+*Compiled by Jonathan*
