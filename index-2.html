@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why the IRGC Cannot Win — Strategic Assessment, March 9, 2026</title>
+  <meta name="description" content="A comprehensive analysis of military degradation, economic collapse, proxy network failure, and the structural asymmetries Iran cannot overcome in the 2026 US-Israel-Iran War." />
+  <meta property="og:title" content="Why the IRGC Cannot Win the War Against the US and Israel" />
+  <meta property="og:description" content="Day 10 of Operation Epic Fury: 90% missile decline, 43 warships sunk, 75% launchers destroyed. A sourced strategic assessment." />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why the IRGC Cannot Win — Strategic Assessment" />
+  <meta name="twitter:description" content="Day 10: 90% missile decline, 43 warships sunk, 75% launchers destroyed. Comprehensive sourced analysis." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #0c0f14; color: #e8e4dc; font-family: 'Crimson Pro', Georgia, serif; -webkit-font-smoothing: antialiased; }
+    button { cursor: pointer; }
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0c0f14; }
+    ::-webkit-scrollbar-thumb { background: #252d3d; border-radius: 3px; }
+    @media (max-width: 600px) {
+      .stats-banner { gap: 0 !important; }
+      .stats-banner > div { min-width: 80px !important; }
+      .stat-value { font-size: 22px !important; }
+      .report-title { font-size: 24px !important; }
+      .tab-btn { padding: 10px 10px !important; font-size: 9px !important; }
+      .content-area { padding: 20px 16px 32px !important; }
+      .two-col { grid-template-columns: 1fr !important; }
+    }
+  </style>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+const { useState } = React;
+
+const C = {
+  bg:"#0c0f14",bgAlt:"#12161e",card:"#171c28",cardBorder:"#252d3d",
+  accent:"#c44b2f",accentGlow:"rgba(196,75,47,0.15)",amber:"#d4943a",
+  green:"#3a9a6a",steel:"#5a8ab0",ice:"#7ab0d4",text:"#e8e4dc",
+  heading:"#f4f0e8",muted:"#8a8478",subtle:"#5a564e",divider:"#252d3d",
+};
+const font="'Crimson Pro',Georgia,serif";
+const mono="'JetBrains Mono','Fira Code','Consolas',monospace";
+const sans="'DM Sans','Segoe UI',system-ui,sans-serif";
+
+const SECTIONS=[
+  {id:"thesis",label:"THESIS"},{id:"military",label:"MILITARY"},
+  {id:"missiles",label:"MISSILES"},{id:"hormuz",label:"HORMUZ"},
+  {id:"proxies",label:"PROXIES"},{id:"economy",label:"ECONOMY"},
+  {id:"internal",label:"INTERNAL"},{id:"allies",label:"ALLIES"},
+  {id:"endgame",label:"ENDGAME"},
+];
+
+const Stat=({value,label,color})=>(
+  <div style={{textAlign:"center",flex:1,minWidth:90,padding:"8px 4px"}}>
+    <div className="stat-value" style={{fontFamily:mono,fontSize:28,fontWeight:700,color:color||C.accent,lineHeight:1.1,letterSpacing:"-0.02em"}}>{value}</div>
+    <div style={{fontFamily:sans,fontSize:10,letterSpacing:"0.12em",textTransform:"uppercase",color:C.muted,marginTop:6}}>{label}</div>
+  </div>
+);
+
+const SH=({children})=>(
+  <h3 style={{fontFamily:sans,fontSize:11,fontWeight:700,letterSpacing:"0.14em",textTransform:"uppercase",color:C.amber,margin:"0 0 16px",paddingBottom:8,borderBottom:`1px solid ${C.divider}`}}>{children}</h3>
+);
+
+const P=({children,style})=>(
+  <p style={{fontFamily:font,fontSize:15,lineHeight:1.72,color:C.text,margin:"0 0 14px",...style}}>{children}</p>
+);
+
+const B=({children,color})=>(<strong style={{color:color||C.heading,fontWeight:600}}>{children}</strong>);
+const N=({children,color})=>(<span style={{fontFamily:mono,fontWeight:600,color:color||C.accent,fontSize:14}}>{children}</span>);
+
+const Card=({title,children,accent})=>(
+  <div style={{background:C.card,border:`1px solid ${C.cardBorder}`,borderRadius:6,padding:"18px 20px",marginBottom:14,borderLeft:`3px solid ${accent||C.accent}`}}>
+    {title&&<div style={{fontFamily:sans,fontSize:12,fontWeight:700,letterSpacing:"0.06em",textTransform:"uppercase",color:accent||C.accent,marginBottom:10}}>{title}</div>}
+    {children}
+  </div>
+);
+
+const Q=({text,source})=>(
+  <div style={{borderLeft:`3px solid ${C.amber}`,paddingLeft:16,margin:"16px 0",fontStyle:"italic"}}>
+    <P style={{color:C.heading,fontSize:15}}>"{text}"</P>
+    <div style={{fontFamily:sans,fontSize:11,color:C.muted}}>— {source}</div>
+  </div>
+);
+
+const ThesisSection=()=>(
+  <div>
+    <div style={{background:`linear-gradient(135deg,${C.accentGlow},transparent)`,border:`1px solid ${C.accent}40`,borderRadius:8,padding:"24px 28px",marginBottom:24}}>
+      <P style={{fontSize:18,lineHeight:1.65,color:C.heading,margin:0}}>
+        <B color={C.accent}>The IRGC cannot win this war.</B> Ten days into Operation Epic Fury, Iran has lost its navy, its air defenses, its supreme leader, and the capacity to sustain high-intensity operations. Ballistic missile launches have dropped <N>90%</N> from Day 1. Iran's proxy network was already shattered before a single bomb fell. The convergence of military devastation, economic collapse, and the largest internal protests since 1979 has created what analysts call an existential crisis for the Islamic Republic. The structural asymmetries in technology, budget, air power, intelligence, and alliance support are simply too vast to overcome.
+      </P>
+    </div>
+    <Q text="There is only one outcome here, which is Iran will lose. The question is what does losing look like and how long will that take." source="Charles Myers, Signum Global Advisors (CNBC, March 5)" />
+    <div className="two-col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12}}>
+      <Card title="What this report covers" accent={C.steel}>
+        <P style={{fontSize:13,margin:0}}>A comprehensive, source-by-source assessment of why the IRGC cannot prevail — drawing on CSIS, FDD, Brookings, WINEP, Soufan Center, ISW/CTP, FPRI, Janes, and direct battlefield reporting from CNN, Al Jazeera, BBC, and AP.</P>
+      </Card>
+      <Card title="Key caveat" accent={C.amber}>
+        <P style={{fontSize:13,margin:0}}>"Cannot win" militarily is distinct from "will collapse" politically. The IRGC retains capacity to impose costs through remaining missiles, Strait disruption, cyber ops, and terrorism. The political endgame remains profoundly uncertain.</P>
+      </Card>
+    </div>
+    <Q text="Iran knows this is a war it cannot 'win' militarily." source="The Soufan Center, March 1, 2026" />
+    <Q text="The failure to mount an effective response underscores its vulnerability to external attacks." source="Behnam Ben Taleblu, FDD" />
+  </div>
+);
+
+const MilitarySection=()=>(
+  <div>
+    <SH>Conventional Forces Destroyed Across Every Domain</SH>
+    <P><B>Air:</B> Iran's air force — aging F-14s, F-4 Phantoms, MiG-29s, and the domestically-produced Kowsar (a reverse-engineered 1960s F-5) — was effectively grounded within hours. The US fields <N>620</N> fifth-generation F-22/F-35 fighters. Iran has zero. Israel achieved air superiority over Iran within hours. CSIS described Iran's air force as its weakest branch. The IISS estimates <N>40–60%</N> of Iran's fleet had limited or no mission capability before the war.</P>
+    <P><B>Navy:</B> By Day 7, <N>43 Iranian warships</N> had been sunk, including Iran's sole Kilo-class submarine, its first drone carrier (IRIS Shahid Bagheri), and its newest missile corvette. Admiral Cooper: no Iranian ship remained underway in the Gulf, Strait, or Gulf of Oman. Defense Secretary Hegseth: the Iranian navy was "resting at the bottom of the Gulf."</P>
+    <P><B>Air Defense:</B> Iran's patchwork of S-300 batteries, Bavar-373 systems, and Soviet-era radars has been neutralized across three successive campaigns. The James Martin Center found Iran's radars around Natanz were "likely less networked than believed." US Cyber Command digitally disrupted Iranian missile defense systems. Remaining systems were "highly vulnerable to electronic warfare" per GlobalData.</P>
+    <Card title="Leadership decapitation" accent={C.accent}>
+      <P style={{fontSize:13,margin:0}}>Opening 12 hours killed Supreme Leader Ali Khamenei, his defense minister, army chief of staff, and IRGC commander-in-chief. FM Araghchi confirmed units now operate on pre-delegated "general instructions." RFE/RL: a "mosaic defensive strategy" — resilient but degraded. Shiraz air defense center destroyed, enabling strikes "with impunity."</P>
+    </Card>
+    <P style={{fontSize:13,color:C.muted}}>US defense budget: <N>$886B</N> vs Iran's <N>$25–30B</N> — roughly 30:1. US R&D alone ($145B) exceeds Iran's total defense budget by 5x.</P>
+  </div>
+);
+
+const MissilesSection=()=>(
+  <div>
+    <SH>Iran's Primary Weapon Is Rapidly Depleting</SH>
+    <P>Iran's ballistic missile arsenal — its primary conventional equalizer — has been dramatically degraded. Pre-war: ~<N>2,500</N> ballistic missiles with <N>400–420</N> launchers. Iran fired over <N>500</N> ballistic missiles and <N>~2,000</N> drones in the first five days.</P>
+    <Card title="Launcher destruction timeline" accent={C.amber}>
+      <div style={{fontFamily:mono,fontSize:13,lineHeight:2}}>
+        <div><span style={{color:C.muted}}>Day 1:</span> <span style={{color:C.text}}>~400 launchers → 80–100 missiles fired/day</span></div>
+        <div><span style={{color:C.muted}}>Day 4:</span> <span style={{color:C.text}}>~60% neutralized → fire rate declining</span></div>
+        <div><span style={{color:C.muted}}>Day 6:</span> <span style={{color:C.text}}>IDF: 100–200 remaining</span></div>
+        <div><span style={{color:C.muted}}>Day 7:</span> <span style={{color:C.text}}>Israeli estimate: ~120 remaining</span> <span style={{color:C.muted,fontSize:11}}>(Amichai Stein / ISW-CTP)</span></div>
+        <div><span style={{color:C.muted}}>Day 8:</span> <span style={{color:C.accent}}>IDF: 75% destroyed → &lt;15 missiles/day</span></div>
+        <div><span style={{color:C.muted}}>Day 10:</span> <span style={{color:C.accent}}>90% decline in ballistic fire, 83% decline in drones</span></div>
+      </div>
+    </Card>
+    <P>USF analyst Arman Mahmoudian: Israel has been "attacking and shutting the entrance gates" to underground missile storage bases — trapping weapons that cannot be deployed. Iran's defense industry can produce Shahed-136 drones (~$20K each) but <B>cannot replace high-end systems</B>. A planned Russian sale of 48 Su-35s remains undelivered.</P>
+    <P>CENTCOM's Admiral Cooper characterized Iran's remaining capacity as a <B>"lingering launch capability"</B>. FDD: ability to replenish is "negligible."</P>
+  </div>
+);
+
+const HormuzSection=()=>(
+  <div>
+    <SH>Strait of Hormuz: De Facto Closed Without Formal Blockade</SH>
+    <P>Iran has <B>not deployed confirmed mines</B>, and no formal blockade was declared. But the Strait is functionally closed. Iran's mine inventory: estimated <N>5,000–6,000</N> (DIA). The US withdrew all four minesweepers from Bahrain pre-war.</P>
+    <Card title="Shipping collapse by the numbers" accent={C.ice}>
+      <div style={{fontFamily:mono,fontSize:13,lineHeight:2.1,color:C.text}}>
+        <div>Normal transits: <span style={{color:C.green}}>~24 crude tankers/day</span></div>
+        <div>March 1: <span style={{color:C.amber}}>4 supertankers (3 Iran-flagged)</span></div>
+        <div>March 2+: <span style={{color:C.accent}}>≈ zero commercial vessels</span></div>
+        <div>Tankers stranded in Gulf: <span style={{color:C.accent}}>~200</span></div>
+        <div>Ships idle (Gulf): <span style={{color:C.accent}}>3,200 (4% world tonnage)</span></div>
+        <div>War risk premiums: <span style={{color:C.amber}}>0.125% → 1.5% of hull value</span></div>
+        <div>VLCC charter rates: <span style={{color:C.accent}}>4x → ~$800K/day</span></div>
+        <div>Brent crude: <span style={{color:C.accent}}>$73 → $119.50 (+35.6% weekly)</span></div>
+      </div>
+    </Card>
+    <P>Iran used a kamikaze drone boat (USV) for the first time — striking the MKD VYOM. At least <N>12</N> commercial vessels struck since the war began. Maersk, Hapag-Lloyd, CMA CGM, MSC all suspended transits. The US launched a <N>$20B</N> reinsurance program March 7, but the Navy said it "does not have availability to provide escorts."</P>
+  </div>
+);
+
+const ProxiesSection=()=>(
+  <div>
+    <SH>Iran's "Ring of Fire" Has Collapsed</SH>
+    <Q text="The axis of resistance is over." source="Nicholas Blanford, Atlantic Council" />
+    <Card title="Hezbollah" accent={C.accent}>
+      <P style={{fontSize:13,margin:0}}>Lost entire senior leadership in 2024, including Nasrallah. <N>~3,800</N> fighters killed. LAF deployed 9,000 troops south of Litani — first time in 40 years. Lebanon banned IRGC operations March 5. "Hezbollah is in no position to play an effective role as an ally to Iran."</P>
+    </Card>
+    <Card title="Hamas" accent={C.amber}>
+      <P style={{fontSize:13,margin:0}}>Neutralized after 2+ years of Israeli operations. <N>70,000+</N> killed, 80% of buildings damaged. Hamas stated it would not open a support front for Iran.</P>
+    </Card>
+    <Card title="Assad's Fall (Dec 2024)" accent={C.steel}>
+      <P style={{fontSize:13,margin:0}}>Iran lost <N>$30–50B</N> in investments. 1,574-km land corridor to Hezbollah severed. All IRGC bases in Syria destroyed. HTS leader: Assad's collapse "set the Iranian project back by 40 years."</P>
+    </Card>
+    <Card title="Houthis" accent={C.green}>
+      <P style={{fontSize:13,margin:0}}>Only limited declarations since Feb 28. Did not formally resume Red Sea operations as of March 4. Their 2025 ceasefire with the US and killing of key commanders imposed caution.</P>
+    </Card>
+    <Q text="Iran was not able to coordinate and control the Axis military capabilities — and many of the most vaunted deterrent capabilities versus Israel either collapsed under wartime pressure or had never existed." source="The Century Foundation" />
+  </div>
+);
+
+const EconomySection=()=>(
+  <div>
+    <SH>Economic Collapse Is Draining the War Chest</SH>
+    <div className="two-col" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:12,marginBottom:16}}>
+      <Card accent={C.accent}><Stat value="90%+" label="Rial purchasing power lost (8 yrs)" color={C.accent}/></Card>
+      <Card accent={C.amber}><Stat value="48.6%" label="Official inflation (Oct 2025)" color={C.amber}/></Card>
+      <Card accent={C.steel}><Stat value="$100/mo" label="Minimum wage" color={C.steel}/></Card>
+      <Card accent={C.muted}><Stat value="$40B" label="Capital flight (2025)" color={C.muted}/></Card>
+    </div>
+    <P>The rial crashed past <N>1,500,000</N>/dollar — world's least valuable currency. Between <N>22–55%</N> of Iranians below the poverty line. Rolling blackouts shut half of industrial capacity. EU unanimously designated the IRGC as a terrorist organization, January 2026.</P>
+    <P>Oil exports under pressure. Chinese discharges dipped to <N>1.13–1.20M bpd</N> in early 2026, one-third of Iranian tankers idling. FDD: "Iran has no oil revenue coming in. Time is not on its side." Treasury Secretary Bessent: "Making Iran Broke Again."</P>
+    <P>The IRGC's <N>$30–50B</N> annual economic empire faces simultaneous war damage, sanctions, and loss of the Syrian financial corridor.</P>
+  </div>
+);
+
+const InternalSection=()=>(
+  <div>
+    <SH>Internal Revolt + IRGC Fractures Compound Military Weakness</SH>
+    <P>December 2025–January 2026 protests: <B>largest since 1979</B>, all 31 provinces. Killed: <N>3,117</N> (gov't) to <N>7,000–30,000+</N> (international monitors). <N>26,000+</N> detained.</P>
+    <Card title="Signs of IRGC fracture" accent={C.accent}>
+      <P style={{fontSize:13,margin:0}}>Iran International: officers abandoned barracks, leaving conscripts alone. One soldier: "Our commanders have abandoned us. They're hiding like rats." Israeli intelligence: "signs of soldiers, police, and IRGC members failing to show up for duty." Multiple diplomats defected abroad. Officials wiring money out as rial collapsed.</P>
+    </Card>
+    <Card title="Signs of IRGC resilience" accent={C.green}>
+      <P style={{fontSize:13,margin:0}}>Mosaic defense activated. IRGC pledged allegiance to Mojtaba Khamenei within hours. 27 named "True Promise" operations by Day 8. Reuters sources: Guards "more united than ever when Iran is under attack." Vahidi present in every high-ranking meeting.</P>
+    </Card>
+    <Card title="The Kurdish front" accent={C.amber}>
+      <P style={{fontSize:13,margin:0}}>Five Kurdish parties formed coalition Feb 22. By March 3, IRGC reportedly <B>evacuated Mariwan</B>. PDKI: "A large force of ours is already in Iran." CNN: CIA exploring arming Kurdish forces. WSJ: Trump admin open to supporting armed groups inside Iran.</P>
+    </Card>
+    <Q text="Iran is in no position to escalate militarily. Opening an external conflict amid sustained nationwide unrest would be extraordinarily risky. The IRGC's primary mission is now domestic control." source="Saeid Golkar, Chicago Council on Global Affairs" />
+  </div>
+);
+
+const AlliesSection=()=>(
+  <div>
+    <SH>Russia and China: Hollow Allies</SH>
+    <P>Despite a Treaty on Comprehensive Strategic Partnership (Oct 2025), Moscow's response: diplomatic statements. Russia attempted a €495M deal for Verba shoulder-fired missiles — FDD: "unlikely to significantly impact" US operations. Reports of Russian intelligence-sharing, but intelligence without means to act has limited value.</P>
+    <Q text="The strategic alliance with Moscow is worthless." source="Mohammad Sadr, Iran's Expediency Discernment Council" />
+    <P>Brookings: "Moscow cannot be happy about yet another display of Kremlin impotence." China called for restraint while buying discounted oil. No military equipment, no diplomatic intervention, no security guarantees. A Chinese envoy was sent — with no results. <B>Iran faces the combined military power of the US and Israel entirely alone.</B></P>
+  </div>
+);
+
+const EndgameSection=()=>(
+  <div>
+    <SH>Expert Consensus: One Military Outcome, Uncertain Political Endgame</SH>
+    <P>Gen. Flynn's three scenarios: <B>1) "IRGCistan"</B> — hardliners close ranks, trade concessions for sanctions relief (most likely if cohesion holds). <B>2) Regime collapse</B> — decapitation sparks defections, protests overwhelm loyalists (high reward, high risk). <B>3) State failure</B> — partial collapse, no coherent opposition — "militias, warlordism, akin to post-2011 Libya."</P>
+    <Card title="Diplomacy: frozen" accent={C.steel}>
+      <P style={{fontSize:13,margin:0}}>Araghchi (March 5): "We are not asking for a ceasefire." But beneath the posturing: <B>Iranian intelligence quietly reached out to the CIA</B> through a third country ~1 day after strikes began. Trump: "Iran wanted to talk but it was too late." Nearly a dozen nations offered to mediate; the US refused all. Saudi Arabia intensified direct back-channels. No UN resolution — US holds Council presidency.</P>
+    </Card>
+    <Card title="Mojtaba Khamenei: supreme leader in name only" accent={C.accent}>
+      <P style={{fontSize:13,margin:0}}>Elected March 8 under IRGC pressure (8 Assembly members boycotted). Has <B>never appeared publicly or issued a personal statement</B>. NBC: "He has not been heard from." Many Iranians have never heard his voice. Reportedly wounded in airstrike. Father, mother, wife, son killed Feb 28. An alleged inaugural speech went viral — <B>confirmed by DW as AI-generated</B>. Euronews insider: "The IRGC, not Mojtaba, holds effective power."</P>
+    </Card>
+    <Card title="Trump's escalating demands" accent={C.amber}>
+      <P style={{fontSize:13,margin:0}}><B>Feb 28:</B> "Lay down your weapons... or face certain death." <B>March 5:</B> "Accept immunity... or face absolutely guaranteed death." <B>March 7:</B> "Under serious consideration for complete destruction and certain death are areas and groups of people not considered for targeting up until this moment." Each iteration widened targeting scope.</P>
+    </Card>
+    <Q text="The strikes bought time and space; whether it's used for a free Iran or muddled through depends on what happens inside Tehran and on the streets in the coming weeks." source="Gen. Mike Flynn, March 1, 2026" />
+    <div style={{background:`linear-gradient(135deg,${C.accentGlow},transparent)`,border:`1px solid ${C.accent}40`,borderRadius:8,padding:"20px 24px",marginTop:20}}>
+      <P style={{fontSize:15,color:C.heading,margin:0,lineHeight:1.7}}>
+        <B color={C.accent}>Bottom line:</B> The IRGC cannot alter the military trajectory of this conflict. 75% of launchers destroyed. Navy sunk. Air defenses eliminated. Proxy network in ruins. Economy collapsing. Population in revolt. Allies absent. New supreme leader wounded, invisible, and powerless. Iran retains capacity to impose costs — but it cannot win. The war's outcome depends on whether the IRGC's mosaic holds or shatters from within. Trump demands unconditional surrender. Iran's hardliners chose a wounded dynastic heir. Neither side is yet ready to define what ending this war looks like.
+      </P>
+    </div>
+  </div>
+);
+
+const CONTENT={thesis:ThesisSection,military:MilitarySection,missiles:MissilesSection,hormuz:HormuzSection,proxies:ProxiesSection,economy:EconomySection,internal:InternalSection,allies:AlliesSection,endgame:EndgameSection};
+
+function App(){
+  const[tab,setTab]=useState("thesis");
+  const Content=CONTENT[tab];
+  return(
+    <div style={{background:C.bg,minHeight:"100vh",fontFamily:font,color:C.text}}>
+      <div style={{borderBottom:`1px solid ${C.divider}`,padding:"28px 24px 20px",textAlign:"center"}}>
+        <div style={{fontFamily:sans,fontSize:10,letterSpacing:"0.2em",textTransform:"uppercase",color:C.accent,marginBottom:8,fontWeight:700}}>Strategic Assessment — March 9, 2026 · Day 10</div>
+        <h1 className="report-title" style={{fontFamily:font,fontSize:30,fontWeight:700,color:C.heading,margin:"0 0 6px",letterSpacing:"-0.02em",lineHeight:1.2,maxWidth:680,marginLeft:"auto",marginRight:"auto"}}>Why the IRGC Cannot Win the War Against the United States and Israel</h1>
+        <div style={{fontFamily:font,fontSize:15,fontStyle:"italic",color:C.muted,maxWidth:560,margin:"8px auto 0"}}>A comprehensive analysis of military degradation, economic collapse, proxy network failure, and the structural asymmetries Iran cannot overcome</div>
+      </div>
+      <div className="stats-banner" style={{display:"flex",flexWrap:"wrap",justifyContent:"center",gap:0,padding:"16px 16px 8px",borderBottom:`1px solid ${C.divider}`,background:C.bgAlt}}>
+        <Stat value="90%" label="Missile fire decline" color={C.accent}/>
+        <Stat value="43" label="Warships sunk" color={C.accent}/>
+        <Stat value="75%" label="Launchers destroyed" color={C.amber}/>
+        <Stat value="0" label="Iranian ships at sea" color={C.accent}/>
+        <Stat value="30:1" label="US vs Iran budget" color={C.steel}/>
+        <Stat value="8" label="US KIA" color={C.green}/>
+      </div>
+      <div style={{display:"flex",flexWrap:"wrap",gap:0,padding:"0 12px",borderBottom:`1px solid ${C.divider}`,background:C.bgAlt,overflowX:"auto"}}>
+        {SECTIONS.map(s=>(
+          <button key={s.id} className="tab-btn" onClick={()=>setTab(s.id)} style={{fontFamily:sans,fontSize:10,fontWeight:tab===s.id?700:500,letterSpacing:"0.1em",textTransform:"uppercase",color:tab===s.id?C.accent:C.muted,background:tab===s.id?C.bg:"transparent",border:"none",borderBottom:tab===s.id?`2px solid ${C.accent}`:"2px solid transparent",padding:"12px 14px",transition:"all 0.15s ease",whiteSpace:"nowrap",cursor:"pointer"}}>{s.label}</button>
+        ))}
+      </div>
+      <div className="content-area" style={{maxWidth:720,margin:"0 auto",padding:"28px 24px 40px"}}><Content/></div>
+      <div style={{borderTop:`1px solid ${C.divider}`,padding:"20px 24px",textAlign:"center"}}>
+        <div style={{fontFamily:sans,fontSize:10,color:C.subtle,lineHeight:1.7,maxWidth:600,margin:"0 auto"}}>Sources: CSIS, FDD, Brookings, WINEP, Soufan Center, ISW/CTP, FPRI, Janes, Chatham House, Atlantic Council, IISS, CNN, Al Jazeera, BBC, AP, Reuters, RFE/RL, Gen. Flynn, Iran International, Defense-Update, The War Zone, Critical Threats, House of Commons Library. All data as of March 9, 2026.</div>
+      </div>
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+  </script>
+</body>
+</html>
